@@ -98,7 +98,7 @@
 			<li>Pilsner</li>
 			<li>Cider</li>
 			<li>Grogg</li>
-			<li>Shot</li>
+			<li>Vin</li>
 		</ul>
 		<div id="pricelist">
 			<div class="price" id="price-1">
