@@ -1,6 +1,6 @@
 window.flipTime = 150;
 window.inTransition = false;
-window.origPrices = [10,15,20,15];
+window.origPrices = [10,15,25,15];
 var prices = [10,15,20,15];
 
 Array.prototype.min = function() {
