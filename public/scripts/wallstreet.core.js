@@ -58,7 +58,7 @@ function initiateCrash () {
 				secs--;
 				$('#bailoutmsg').html('Bailout in<br />'+secs);
 				//debugMe(secs);
-				if (!secs) {
+				if (secs < 1) {
 					$('#bailoutmsg').fadeOut('fast');
 					$('#veil').fadeOut('slow', function () {
 						$('.btns').fadeIn('slow');
@@ -74,10 +74,7 @@ function initiateCrash () {
 }
 
 function resetPrices () {
-	if (window.nowrite) {
-		return false;
-	}
-	window.prices = window.origPrices;
+	window.prices = [10,15,20,15];
 	//debugMe(window.origPrices);
 	updateAllPrices();
 }
