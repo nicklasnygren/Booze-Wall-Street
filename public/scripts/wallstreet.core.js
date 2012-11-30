@@ -1,7 +1,7 @@
 window.flipTime = 150;
 window.inTransition = false;
 window.origPrices = [10,15,20,15];
-var prices = [10,15,20,15];
+window.prices = [10,15,20,15];
 
 Array.prototype.min = function() {
 var min = this[0];
@@ -12,14 +12,6 @@ return min;
 
 //Redraws all the prices on the page
 function updateAllPrices() {
-	//debugMe(window.prices.join(','));
-	if (window.nowrite && data == "2,2,2,2") {
-		//alert("hej;")
-		initiateCrash();
-		return false;
-	} else if (window.nowrite && data == window.prices.join(',')) {
-		return false;
-	}
 	//debugMe(newPrices[0]+','+newPrices[1]+','+newPrices[2]+','+newPrices[3]); 
 	$('#price-1').updatePrice(window.prices[0]);
 	$('#price-2').updatePrice(window.prices[1]);
@@ -37,7 +29,7 @@ function hausse (myItem) {
 	};
 	//debugMe('Clicked hausse #'+myItem);
 	if (window.nowrite) { return false; }
-	updateAllPrices();
+	//updateAllPrices();
 }
 
 function isInTransition () {
@@ -163,7 +155,7 @@ jQuery.fn.updatePrice = function (newprice) {
 }
 
 $(document).ready(function () {
-	/*setInterval(function () {
+	setInterval(function () {
 		updateAllPrices();
-	}, 2000);*/
+	}, 30000);
 });
