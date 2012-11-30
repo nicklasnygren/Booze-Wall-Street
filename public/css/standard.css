@@ -1,0 +1,174 @@
+@font-face {
+  font-family: "Ostrich Sans Bold";
+  src: url("../fonts/ostrich-bold.ttf");
+  }
+@font-face {
+  font-family: "Ostrich Sans Black";
+  src: url("../fonts/ostrich-black.ttf");
+  }
+@font-face {
+  font-family: "Ostrich Sans Regular";
+  src: url("../fonts/ostrich-regular.ttf");
+  }
+@-webkit-keyframes marketcrash {
+        0%, 100% {
+                -webkit-transform: rotateZ(-2deg);
+        }
+        50% {
+                -webkit-transform: rotateZ(2deg);
+        }
+}
+
+body { background: url(../gfx/bg.jpg); overflow: hidden}
+					
+.hidden {display: none !important}	
+.lowindex {z-index: 0}
+
+.bigmsg {
+	text-align: center;
+	display: none;
+	height: 300px;
+	width: 2000px;
+	position: absolute;
+	z-index: 600;
+	top: 50%; margin-top: -150px;
+	left: 50%; margin-left: -1000px;
+	font-family: "Ostrich Sans Bold";
+	font-size: 300px;
+}
+
+#crashmsg {
+	height: 600px;
+	margin-top: -300px;
+	color: rgba(255,150,150,1);
+	text-shadow: 0 0 150px rgba(255,150,150, 0.9);
+	-webkit-animation: marketcrash 120ms infinite;
+}
+#bailoutmsg {
+	height: 600px;
+	margin-top: -300px;
+	color: rgba(150,255,150,1);
+	text-shadow: 0 0 150px rgba(150,255,150, 0.9);
+}
+
+#veil { 
+	display: none;
+	position: absolute;
+	height: 120%;
+	width: 120%;
+	top: -20px;
+	left: -20px;
+	opacity: 0.7;
+	z-index: 300;
+	background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0, rgb(0,0,0)),
+	    color-stop(0.56, rgb(100,100,100))
+	);
+ }
+
+#pricelist { position: absolute; right: 20px; top: 20px; background-color: rgba(255,255,255,0) }
+#labels {  position: absolute; right: 360px; width: 595px; top: 20px; margin-left: 300px; list-style: none}
+.btns { position: absolute; width: 650px; top: 30px; margin-left: 300px; list-style: none }
+	#btns {right: 600px;}
+	#btns2 {right: -680px;}
+	#btns2 input { background: rgba(30,42,45,0.75) }
+	.btns li {height: 170px; padding: 27px}
+	.btns input { height: 170px; width: 170px; display: block;	border: 0; background: rgba(205,42,45,0.75); border-radius: 85px; font-family: 'Ostrich Sans Regular'; color: white; font-size: 70px; line-height: 180px; -webkit-box-shadow: 0 30px 30px rgba(0,0,0,0.2); font-weight: 100; -webkit-transform: rotateZ(-20deg);  }
+	.btns input:active { margin-top: 10px; -webkit-box-shadow: 0 20px 30px rgba(0,0,0,0.2); }
+#labels li { color: display: list-item; font-family: 'Ostrich Sans Bold'; font-size: 150pt; height: 175px; line-height: 250px; border-bottom: 10px dotted black; padding: 20px}
+
+#wrapper {
+	-webkit-transform-origin: 0 100% 100%;
+	-webkit-transform:
+		perspective(3000)
+		rotateZ(-3deg);
+	-webkit-transform-style: preserve-3d;
+	background: rgba(255,255,255,0.55);
+	border-radius: 10px;
+	width: 1000px;
+	height: 950px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -490px;
+	margin-top: -475px;
+	-webkit-box-shadow: 0 30px 30px rgba(0,0,0,0.2);
+	z-index: 50;
+}
+
+.price { width: 286px; padding: 18px; height: 190px; -webkit-transform: translateZ(1px); -webkit-transform-style: preserve-3d; }
+.price .digit {float: left}
+.price .digit+.digit {margin-left: 10px}
+
+
+.digit { 
+	position: relative;
+	height: 200px;
+	width: 128px;
+	background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0, rgb(0,0,0)),
+	    color-stop(0.56, rgb(40,40,40))
+	);
+	-webkit-box-shadow: 0 0 2px rgba(0,0,0,0.7);
+	-webkit-perspective: 800;
+	z-index: -20
+}
+.digit, .digit div {
+	font-family: "Ostrich Sans Regular";
+	font-size: 200px;
+	text-align: center;
+	color: white;
+	line-height: 235px;
+	overflow: hidden;
+	border-radius: 10px;
+	border: 2px solid black;
+}
+		
+		.top, .top div, .bottom { position: absolute; width: 100%; height: 96px; display: block}
+		.top { -webkit-transform-style: perserve-3d; -webkit-transition: -webkit-transform 150ms; }
+		.top div { -webkit-backface-visibility: hidden; background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0, rgb(30,30,30)),
+	    color-stop(0.56, rgb(40,40,40))
+	); }
+		.front {}
+		.back { display: none; -webkit-transform: rotateZ(-180deg) rotateY(180deg) translateX(-1px); background-position: 0 -100px; }
+		.bottom { z-index: -10; background-position: 0 -100px; top: 100px; background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0, rgb(0,0,0)),
+	    color-stop(0.56, rgb(28,28,28))
+	);
+	}
+	span.lowest, .front span, .bottom span, .back span {
+		display: block;
+		position: absolute;
+		height: 100%;
+		width: 100%;
+	}
+	.bottom span, .back span {
+		top: -100px;
+		left: 2px;
+	}
+	span.lowest {
+		height: 96px;
+		width: 134px; 
+		overflow: hidden;
+		z-index: -20 
+}
+	
+.rotated {
+	-webkit-transform-style: preserve-3d;
+	-webkit-transform: rotateX(-180deg);
+	-webkit-transform-origin: bottom;
+	
+}
